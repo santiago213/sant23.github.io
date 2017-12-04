@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home page</title>
+  <meta charset="utf-8" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+  <link href="home.css" rel="stylesheet" type="text/css">
+  <script src="ajax.js"></script>
+    <script src="parse-response.js"></script>
+</head>
+
+<body>
+  <header class="container">
+    <div class="row">
+      <h1 class="col-sm-8">World Wide Cuisines</h1>
+      <nav class="col-sm-4">
+        <p><a href = "Home.html" > Home</a></p>
+        <p><a href = "South_american.html" > South American</a></p>
+        <p><a href = "Japanese.html" > Japanese</a></p>
+        <p><a href = "About.html" > About</a></p>
+      </nav>
+    </div>
+  </header>
+  <section class="jumbotron">
+    <div class="container">
+      <div class="row_text-center">
+        <h2>Home</h2>
+        <div class="home_text">
+           <p1> Welcome to the World Wide Cuisinessine Website.</p1> 
+           <p2>Please select one of the following images in order to view dishes from that area.</p2> 
+        </div>
+      </div>
+      <div class = "gallery">
+          <figure class = "Japanese_jpg"> 
+              <a href = "Japanese.html">
+                <img src = "https://www.dhresource.com/200x200/f2/albu/g5/M00/97/24/rBVaI1kb-0eAerQQAAFz8U12IHs909.jpg"></img>
+              </a>
+          </figure> 
+          <figure class = "South_american_jpg">
+              <a href = "South_american.html">
+                <img src ="https://img-global.cpcdn.com/002_photo_reports/photo_reports_7601_v1407224960_photo_feedback_foto_zzoyxk1fho3m5nbuer52/200x200cq70/photo.jpg"></img>              </a>
+          </figure>
+      </div>
+      <div class = "labels">
+         <p1> Japanese Cuisines</p1>
+         <p2> South American Cuisines</p2>
+      </div>
+    </div>
+  </section>
+  
+ <footer class = "lower_section">
+	    <ul>
+	        <li><p>Weather</p></li>
+	        <li class = "search_bar"> <input id = 'textsrch' type="text"/>
+                 <button id = 'button' onclick = 'find()' > submit</button></li>
+	        <li><p>Student Website 2017</p></li>
+	        <li><p> Site Creator Santiago Herrera</p></li>
+	    </ul>
+	</footer>
+</body>
+
+<script>
+/* clean nodes*/
+            function clean(node)
+            {
+              for(var n = 0; n < node.childNodes.length; n ++)
+              {
+                var child = node.childNodes[n];
+                if( child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue)))
+                 {
+                      node.removeChild(child);
+                      n --;
+                }
+                else if(child.nodeType === 1)
+                {
+                  clean(child);
+                }
+              }
+            }
+            //clean(document.body);
+/* global ajax */
+/* global parseResponse */
+function find(){
+  
+    var container = document.getElementById('lower_section');
+    var url = "http://api.openweathermap.org/data/2.5/weather?q="; 
+    var apiKey = "15b77c17d058c6e377e00ca8762eec8c";  
+    var city = document.getElementById('textsrch').value; 
+    url += city + "&appid=" + apiKey;
+    ajax(url, function(resp) {        
+    resp = parseResponse(resp);
+    container.appendChild(document.createTextNode(resp)); 
+    }); 
+    container.removeChild(container.lastChild);
+}
+
+</script>
+</html>   
+

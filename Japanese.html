@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Japanese page</title>
+  <meta charset="utf-8" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
+  <link href="japanese.css" rel="stylesheet" type="text/css">
+  <script src="ajax.js"></script>
+    <script src="parse-response.js"></script>
+</head>
+
+<body>
+  <header class="container">
+    <div class="row">
+      <h1 class="col-sm-8">World Wide Cuisines</h1>
+      <nav class="col-sm-4">
+        <p><a href = "Home.html" > Home</a></p>
+        <p><a href = "South_american.html" > South American</a></p>
+        <p><a href = "Japanese.html" > Japanese</a></p>
+        <p><a href = "About.html" > About</a></p>
+      </nav>
+    </div>
+  </header>
+  <section class="jumbotron">
+    <div class="container">
+      <div class="row_text-center">
+        <h2>Japanese</h2>
+        <div class="about_text">
+           <p1> 
+           Choose a dish to learn how to make it
+            </p1> 
+        </div>
+         <div class = "gallery">
+            <figure class = "Rice_balls"> 
+              <a href = "#">
+                <img src = "https://www.dhresource.com/200x200s/f2-albu-g3-M01-57-89-rBVaHFRc11aAYi3SAAC2uZwg_ls332.jpg/punch-sushi-rice-ball-mold-onigiri-mould.jpg"></img>
+              </a>
+            </figure>
+          <p>Rice Balls: A traditional standard when it comes to Japanese Cuisines </p>
+          </div>
+          <div class = gallery2>
+          <figure class = "Curry_rice">
+              <a href = "#">
+                <img src ="https://igx.4sqi.net/img/general/200x200/1299503_YKtn5KhA9wWp4jdfhYdxG8QB7yr65RpjsTM2VR2V6qg.jpg"></img> 
+              </a>
+            </figure>
+          <p> Curry Rice: A spicy dish that leaves the mouth wanting for more </p>
+          </div>
+      </div>
+    </div>
+  </section>
+  
+ <footer class = "lower_section">
+	    <ul>
+	        <li><p>Weather</p></li>
+	        <li class = "search_bar"> <input id = 'textsrch' type="text"/>
+                 <button id = 'button' onclick = 'find()' > submit</button></li>
+	        <li><p>Student Website 2017</p></li>
+	        <li><p> Site Creator Santiago Herrera</p></li>
+	    </ul>
+	</footer>
+</body>
+<script>
+/* clean nodes*/
+            function clean(node)
+            {
+              for(var n = 0; n < node.childNodes.length; n ++)
+              {
+                var child = node.childNodes[n];
+                if( child.nodeType === 8 || (child.nodeType === 3 && !/\S/.test(child.nodeValue)))
+                 {
+                      node.removeChild(child);
+                      n --;
+                }
+                else if(child.nodeType === 1)
+                {
+                  clean(child);
+                }
+              }
+            }
+           // clean(document.body);
+/* global ajax */
+/* global parseResponse */
+function find(){
+  
+    var container = document.getElementById('lower_section');
+    var url = "http://api.openweathermap.org/data/2.5/weather?q="; 
+    var apiKey = "15b77c17d058c6e377e00ca8762eec8c";  
+    var city = document.getElementById('textsrch').value; 
+    url += city + "&appid=" + apiKey;
+    ajax(url, function(resp) {        
+    resp = parseResponse(resp);
+    container.appendChild(document.createTextNode(resp)); 
+    }); 
+    container.removeChild(container.lastChild);
+}
+
+</script>
+</html>   
+

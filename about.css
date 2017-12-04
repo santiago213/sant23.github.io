@@ -1,0 +1,128 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+header {
+  padding: 20px 0;
+  background-color: rgb(0,179,0);
+  background-size: cover;
+}
+
+header .row {
+  display: flex;
+  align-items: center;
+  
+}
+
+header .col-sm-8 {
+  display: flex;
+  font-weight: 700;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+}
+
+header p {
+  padding: 0 20px;
+  display: flex;
+}
+
+.jumbotron {
+  display: flex;
+  align-items: center;
+  background-image: url('https://i0.wp.com/img1.sunset.timeinc.net/sites/default/files/styles/400xvariable/public/image/2016/09/main/midweek-spread.jpg?itok=1yMGv1AG');
+  background-size: cover;
+  color: #ffffff;
+  height: 500px;
+  text-shadow: 0.25px 0.25px 0.25px #000000;
+}
+
+.jumbotron .container .row_text-center h2 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+
+.jumbotron .container .row_text-center .about_text p1 {
+  font-size: 25px;
+  font-weight: 400; 
+  margin-top: 0;
+  color: #fff;
+}
+section .container .row img {
+  margin: 0 0 30px;
+  width: 100%;
+}
+
+
+.col-md-6 {
+  margin: 0 0 30px;
+}
+
+.btn.btn-primary {
+  border-radius: 2px;
+  border: 0px;
+  color: #ffffff;
+  text-shadow: none;
+  background-color: #000000;
+}
+
+.btn.btn-primary:hover {
+  color: #000000;
+  background-color: #add8e6;
+}
+
+
+footer {
+  font-size: 15px;
+  padding: 20px 0;
+}
+
+footer .col-sm-8 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer ul {
+  list-style: none;
+  display: flex;
+}
+
+.lower_section ul li{
+  display: flex;
+  margin-right: 10px;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.lower_section .button{
+  display: flex;
+}
+
+.lower_section .text-srch{
+  display: flex;
+}
+
+.lower_section .search_bar{
+  padding-right: 20px;
+  margin-right: 20px;
+  
+}
+
+a{
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover, a:focus{
+  background-color: blue;
+  color: white;
+  text-decoration: none;
+  outline: none;
+}
