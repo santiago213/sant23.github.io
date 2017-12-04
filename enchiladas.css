@@ -34,10 +34,10 @@ header p {
 .jumbotron {
   display: flex;
   align-items: center;
-  background-image: url('https://data.whicdn.com/images/15120161/large.jpg');
+  background-image: url('https://igx.4sqi.net/img/general/200x200/85391777_6yaJTHPOZ8Ve0eY0YhQD4dog63UOrTi1MeZ4eauET0s.jpg');
   background-size: cover;
   color: #ffffff;
-  height: 500px;
+  height: 620px;
   text-shadow: 0.25px 0.25px 0.25px #000000;
 }
 
@@ -70,8 +70,32 @@ header p {
   padding-bottom: 20px;
 }
 
-.jumbotron .container .row_text-center .gallery2 p{
+.jumbotron .container .row_text-center .gallery2 p1{
   display: flex;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+
+.jumbotron .container .row_text-center .gallery2 p2{
+  display: flex;
+  padding-bottom: 10px;
+  text-align: justify;
+  text-align-last: left;
+  font-weight: 500;
+}
+
+.jumbotron .container .row_text-center .gallery2 p3{
+  display: flex;
+  padding-bottom: 10px;
+  text-align: justify;
+  text-align-last: left;
+  font-weight: 500;
+}
+
+.jumbotron .container .row_text-center .gallery2 p4{
+  display: flex;
+  text-align: justify;
+  text-align-last: left;
   font-weight: 500;
 }
 
@@ -119,7 +143,6 @@ footer ul {
   margin-right: 10px;
   justify-content: center;
   align-items: center;
-  
 }
 
 .lower_section .button{

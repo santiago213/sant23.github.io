@@ -68,12 +68,13 @@ header p {
 
 .jumbotron .container .row_text-center .gallery2{
   display: flex;
-  padding-bottom: 20px;
+  padding-right: 20px;
 }
 
 .jumbotron .container .row_text-center .gallery2 p{
   display: flex;
   font-weight: 500;
+  margin-left: 15px;
 }
 
 section .container .row img {
