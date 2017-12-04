@@ -7,8 +7,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
   <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
   <link href="enchiladas.css" rel="stylesheet" type="text/css">
-  <script src="ajax.js"></script>
-    <script src="parse-response.js"></script>
+  <script src="https://ide.c9.io/herrera1213/cse322/A12/ajax.js"></script>
+    <script src="https://ide.c9.io/herrera1213/cse322/A12/parse-response.js"></script>
 </head>
 
 <body>
@@ -30,9 +30,7 @@
         </div>
          <div class = gallery2>
           <figure class = "enchiladas">
-              <a href = "enchiladas.html">
                 <img src ="https://i.pinimg.com/736x/20/c5/52/20c5528dc49e30b9d5fb79e0b50db32f--mexican-enchiladas-chicken-enchiladas.jpg"></img> 
-              </a>
               <p1>Serves: 3-4</p1>
               <p2>Cooking Time: 20-25 minutes</p2>
               <p3>Ingredients Needed: 1 Tbsp. butter
@@ -63,11 +61,12 @@
 	    <ul>
 	        <li><p>Weather</p></li>
 	        <li class = "search_bar"> <input id = 'textsrch' type="text"/>
-                 <button id = 'button' onclick = 'find()' > submit</button></li>
+              <button id = 'button' onclick = 'find()' > submit</button></li>
 	        <li><p>Student Website 2017</p></li>
 	        <li><p> Site Creator Santiago Herrera</p></li>
 	    </ul>
 	</footer>
+	<footer id = "space" />
 </body>
 <script>
 /* clean nodes*/
@@ -92,8 +91,8 @@
 /* global parseResponse */
 function find(){
   
-    var container = document.getElementById('lower_section');
-    var url = "http://api.openweathermap.org/data/2.5/weather?q="; 
+    var container = document.getElementById('space');
+    var url = "https://api.openweathermap.org/data/2.5/weather?q="; 
     var apiKey = "15b77c17d058c6e377e00ca8762eec8c";  
     var city = document.getElementById('textsrch').value; 
     url += city + "&appid=" + apiKey;
