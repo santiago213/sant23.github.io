@@ -45,14 +45,14 @@ header p {
   font-size: 45px;
   font-weight: 700;
   margin: 0;
-  color: #fff;
+  color: #000;
 }
 
 .jumbotron .container .row_text-center .about_text p1 {
   font-size: 25px;
   font-weight: 400; 
   margin-top: 0;
-  color: #fff;
+  color: #000;
 }
 section .container .row img {
   margin: 0 0 30px;
